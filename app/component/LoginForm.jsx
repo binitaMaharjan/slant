@@ -62,11 +62,6 @@ var LoginForm = React.createClass({
          }else{
              return false;
          }
-        // var email = this.refs.email.value;
-         //var password = this.refs.password.value;
-         // if(email.length>0 && password.length>0){
-         //     this.props.onLoginButtonClicked(email, password);
-         // }
      },
     render:function () {
         return(

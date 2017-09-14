@@ -1,37 +1,40 @@
 var webpack = require('webpack');
-module.exports = {
+module.exports={
     entry: [
         'script!jquery/dist/jquery.min.js',
         './app/app.jsx'
     ],
-    externals: {
-        jquery: 'jQuery'
+    externals:{
+        jquery:'jQuery'
     },
-    plugins: [
+    plugins:[
         new webpack.ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery'
+            '$':'jquery',
+            'jQuery':'jquery'
         })
     ],
     output: {
         path: __dirname,
-        filename: './public/bundle.js'
+        filename:'./public/bundle.js'
     },
-    resolve: {
-        root: __dirname,
-        alias: {
+    resolve:{
+        root:__dirname,
+        alias:{
             LoginForm: 'app/component/LoginForm.jsx',
-            LoginMessage: 'app/component/LoginMessage.jsx',
+           LoginMessage: 'app/component/LoginMessage.jsx',
             Login: 'app/component/Login.jsx',
+            Dashboard: 'app/component/Dashboard.jsx',
+            NavSideBar: 'app/component/NavSideBar.jsx',
+            loginApi:'app/api/loginApi.jsx',
             loginApi: 'app/api/loginApi.jsx',
             getCurrentUserApi: 'app/api/getCurrentUser.jsx'
 
 
         },
-        extensions: ['', '.js', '.jsx']
+        extensions:['','.js','.jsx']
     },
-    module: {
-        loaders: [
+    module:{
+        loaders:[
             {
                 loader: 'babel-loader',
                 query: {
