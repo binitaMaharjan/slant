@@ -4,7 +4,7 @@ html,body{
     padding: 0;
     display: block;
     margin: 0 auto;
-    font-family: Poppins-SemiBold, Georgia, serif;
+    font-family: Poppins, Georgia, serif;
 }
 .log_body{
     background: linear-gradient(-222deg, rgba(114,118,255,0.77) 0%, rgba(80,84,255,0.92) 64%, rgba(80,83,255,0.92) 65%, rgba(74,78,255,0.94) 76%, #3E41FF 100%);
@@ -45,7 +45,7 @@ button:focus {
 .box_inside{
     position: absolute;
     top: 50%;
-    /*left: 50%;*/
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -181,8 +181,8 @@ button:focus {
 .box_review{
     font-family: Poppins-Medium, Georgia, serif;
     font-size: 14px;
-    color: #4A4A4A;
-    letter-spacing: -0.8px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
     width: 30vw;
     padding: 20px;
     height: 42vh;
@@ -193,7 +193,7 @@ button:focus {
     border-radius: 8px;
 }
 
-.review_head{
+.review_head, .rating_head, .senti_head, .ctr_head{
     font-family: Poppins-Medium, Georgia, serif;
     font-size: 15px;
     color: #4A4A4A;
@@ -253,17 +253,9 @@ button:focus {
     letter-spacing: 1.1px;
 }
 
-.review_app{
-    background-color: #D8D8D8;
-    border-radius: 50%;
-    width: 33px;
-    height: 34px;
-    display: inline-block;
-}
-
-.review_positive span, .app_review span{
+.big{
     font-family: Poppins-Medium, Georgia, serif;
-    font-size: 15px;
+    font-size: 19px;
     padding: 5px;
 }
 
@@ -284,4 +276,70 @@ button:focus {
     font-size: 14px;
     color: #97A2A4;
     letter-spacing: -0.75px;
+}
+
+.divi {
+    margin: 20px;
+}
+
+.site_review{
+    display: inline-block;
+    float: left;
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 14px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
+}
+
+.site_review figure{
+    display: inline-block;
+    margin: 5px;
+}
+
+.site_review img{
+    display: inline-block;
+    width: 33px;
+    height: 34px;
+}
+
+.rat{
+    font-family: Poppins-Light, Georgia, serif;
+    font-size: 50px;
+    color: #464646;
+    letter-spacing: 1.1px;
+}
+
+.app_rate{
+    display: inline-block;
+    float: left;
+    width: 90%;
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 14px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
+}
+.senti_body{
+    margin:10%;
+    text-align: center;
+}
+.reco_no{
+
+    font-family: Poppins-Light, Georgia, serif;
+    font-size: 30px;
+    color: #464646;
+    letter-spacing: 0.66px;
+}
+
+.reco_per{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 24px;
+    color: #38D996;
+    letter-spacing: 0.53px;
+}
+
+.noreco_per{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 24px;
+    color: #ED40DB;
+    letter-spacing: 0.53px;
 }
