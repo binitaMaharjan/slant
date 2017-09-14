@@ -25,6 +25,7 @@ module.exports={
             Login: 'app/component/Login.jsx',
             Dashboard: 'app/component/Dashboard.jsx',
             NavSideBar: 'app/component/NavSideBar.jsx',
+            Analytics: 'app/component/Analytics.jsx',
             loginApi:'app/api/loginApi.jsx',
 
         },
