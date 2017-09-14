@@ -22,7 +22,7 @@ var LoginForm = React.createClass({
         //Email
         if(!fields["email"]){
             formIsValid = false;
-            errors["email"] = "Cannot be empty";
+            errors["email"] = "Email cannot be empty";
         }
 
         if(typeof fields["email"] !== "undefined"){
@@ -37,7 +37,7 @@ var LoginForm = React.createClass({
         //password
         if(!fields["password"]){
             formIsValid = false;
-            errors["password"] = "Cannot be empty";
+            errors["password"] = "Password cannot be empty";
         }
 
         if(typeof fields["password"] !== "undefined"){

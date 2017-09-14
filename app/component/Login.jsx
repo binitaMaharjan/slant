@@ -2,50 +2,58 @@ var React = require('react');
 var LoginForm = require('LoginForm');
 var LoginMessage = require('LoginMessage');
 var loginApi = require('loginApi');
+var getCurrentUserApi = require('getCurrentUserApi');
 var Login = React.createClass({
     getInitialState: function () {
-        return{
-            isLoading:false,
-            errorMessage:undefined,
+        return {
+            isLoading: false,
+            errorMessage: undefined,
             access_token: ''
         }
     },
     onLoginButtonClicked: function (email, password) {
         var that = this;
         this.setState({
-            isLoading:true,
+            isLoading: true,
             errorMessage: undefined,
             access_token: undefined,
         });
         loginApi.getLoggedIn(email, password).then(function (access_token) {
+            getCurrentUserApi.getCurrentUser().then(function (res) {
+                console.log(res);
+            });
             that.setState({
-                access_token:access_token,
-                isLoading:false
-            })
-        },function (e) {
+                access_token: access_token,
+                isLoading: false
+            });
+
+
+        }, function (e) {
             that.setState({
-                isLoading:false,
-                errorMessage:e.message
+                isLoading: false,
+                errorMessage: e.message
             });
         })
 
     },
-    render:function () {
+    render: function () {
         var {isLoading, access_token, errorMessage} = this.state;
-        function renderMessage(){
-            if(isLoading){
+
+        function renderMessage() {
+            if (isLoading) {
                 return <h3 className="text-center">Fetching User...</h3>;
-            }else if(access_token){
-                localStorage.setItem("token",access_token);
+            } else if (access_token) {
+                localStorage.setItem("token", access_token);
                 return;
-            }else if(errorMessage){
+            } else if (errorMessage) {
                 return <LoginMessage checkError={errorMessage}/>
             }
         }
-        return(
+
+        return (
             <div className="container log_body">
-                <LoginForm onLoginButtonClicked={this.onLoginButtonClicked}/>
                 {renderMessage()}
+                <LoginForm onLoginButtonClicked={this.onLoginButtonClicked}/>
             </div>
         )
     }
