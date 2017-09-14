@@ -31,7 +31,6 @@ var Login = React.createClass({
 
     },
     render:function () {
-        console.log(this.state);
         var {isLoading, access_token, errorMessage} = this.state;
         function renderMessage(){
             if(isLoading){
