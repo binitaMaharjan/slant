@@ -1,7 +1,9 @@
 var React = require('react');
 var LoginForm = require('LoginForm');
 var LoginMessage = require('LoginMessage');
+var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var loginApi = require('loginApi');
+
 var Login = React.createClass({
     getInitialState: function () {
         return{
@@ -11,6 +13,7 @@ var Login = React.createClass({
         }
     },
     onLoginButtonClicked: function (email, password) {
+        localStorage.removeItem('token');
         var that = this;
         this.setState({
             isLoading:true,
@@ -22,6 +25,8 @@ var Login = React.createClass({
                 access_token:access_token,
                 isLoading:false
             })
+            localStorage.setItem("token",access_token);
+            hashHistory.push("/");
         },function (e) {
             that.setState({
                 isLoading:false,
@@ -36,7 +41,7 @@ var Login = React.createClass({
             if(isLoading){
                 return <h3 className="text-center">Fetching User...</h3>;
             }else if(access_token){
-                localStorage.setItem("token",access_token);
+
                 return;
             }else if(errorMessage){
                 return <LoginMessage checkError={errorMessage}/>

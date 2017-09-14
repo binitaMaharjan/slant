@@ -23,6 +23,8 @@ module.exports={
             LoginForm: 'app/component/LoginForm.jsx',
            LoginMessage: 'app/component/LoginMessage.jsx',
             Login: 'app/component/Login.jsx',
+            Dashboard: 'app/component/Dashboard.jsx',
+            NavSideBar: 'app/component/NavSideBar.jsx',
             loginApi:'app/api/loginApi.jsx',
 
         },
