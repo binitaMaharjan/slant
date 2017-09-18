@@ -26,7 +26,6 @@ module.exports = {
             email: email,
             password: password
         }).then(function (res) {
-            console.log(res.data);
             if (res.status === 200) {
                 axios.defaults.headers.common['Authorization'] = res.data.access_token;
                 return res.data.access_token;
