@@ -13,6 +13,12 @@ function requireAuth(nextState, replace) {
         })
     }
 }
+
+/*ReactDOM.render(
+    <Dashboard/>,
+        document.getElementById("app")
+
+);*/
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={Dashboard} onEnter={requireAuth}/>

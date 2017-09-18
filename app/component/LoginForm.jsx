@@ -65,32 +65,36 @@ var LoginForm = React.createClass({
      },
     render:function () {
         return(
+            <div className="container">
                 <div className="row">
-                    <div className="col-md-4 col-md-offset-4">
-                        <form className="v_center" onSubmit={this.onFormSubmit}>
-                            <div className="box">
-                                <div className="row">
-                                    <div className="col-md-4 col-md-offset-4 box_inside">
-                                        <div className="row">
-                                            <div className="col-md-4 col-md-offset-4 reviews_await">
-                                                Reviews await.
-                                            </div>
-                                        </div>
-                                        <br/><br/>
-                                        <input type="text" placeholder="Username" id="log_user" ref="email" className="log_user" onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]} autoFocus/>
-                                        <span style={{color: "red"}}>{this.state.errors["email"]}</span>
-                                        <input type="password" placeholder="Password" id="log_pass" ref="password" className="log_pass" onChange={this.handleChange.bind(this, "password")} value={this.state.fields["password"]} />
-                                        <span style={{color: "red"}}>{this.state.errors["password"]}</span>
-                                        <button className="btn btn-primary btn_signin">
-                                            <img src="./../images/airplane.png"/>&#8195; Sign In
-                                        </button>
-                                    </div>
+                    <div className="col-sm-4">
+
+                    </div>
+                    <div className="col-sm-4 box">
+                        <div className="row">
+                            <div className="col-sm-2 col-md-1">
+                            </div>
+                            <div className="col-sm-8 col-md-10 box_inside">
+                                <form className="reviews_await" onSubmit={this.onFormSubmit}>
+                                    Reviews await.
+                                    <input type="text" placeholder="Username" id="log_user" className="log_user" onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]} autoFocus required/>
+                                    <span style={{color: "red"}}>{this.state.errors["email"]}</span>
+                                    <input type="password" placeholder="Password" id="log_pass" className="log_pass" onChange={this.handleChange.bind(this, "password")} value={this.state.fields["password"]} required/>
+                                    <span style={{color: "red"}}>{this.state.errors["password"]}</span>
+                                    <button className="btn btn-primary btn_signin">
+                                        <img src="images/airplane.png"/>&#8195; Sign In
+                                    </button>
+                                </form>
+                                <div className="col-sm-2 col-md-1">
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                        <div className="col-sm-4">
+
+                        </div>
                     </div>
                 </div>
-
+            </div>
         );
     }
 });
