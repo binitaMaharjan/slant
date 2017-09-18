@@ -1,10 +1,13 @@
 {
-  "name": "reactweather",
+  "name": "Slant Dashboard",
   "version": "1.0.0",
-  "description": "Simple weather app",
+  "description": "Slant app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build",
+    "build": "webpack -d && copy public\\index.html app\\index.html && webpack-dev-server --content-base  src\\ --inline --hot",
+    "build:prod": "webpack -d && copy public\\index.html app\\index.html"
   },
   "author": "Prashant Shrestha",
   "license": "ISC",
@@ -28,6 +31,7 @@
     "sass-loader": "^6.0.6",
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.13"
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^2.8.2"
   }
 }
