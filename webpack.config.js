@@ -27,6 +27,7 @@ module.exports={
             NavSideBar: 'app/component/NavSideBar.jsx',
             Analytics: 'app/component/Analytics.jsx',
             TopNav: 'app/component/TopNav.jsx',
+            LocationDropDown: 'app/component/LocationDropDown.jsx',
             loginApi:'app/api/loginApi.jsx',
             locationDropDownApi:'app/api/locationDropDownApi.jsx',
 
