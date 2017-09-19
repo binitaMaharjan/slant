@@ -27,7 +27,10 @@ module.exports={
             Dashboard: 'app/component/Dashboard.jsx',
             NavSideBar: 'app/component/NavSideBar.jsx',
             Analytics: 'app/component/Analytics.jsx',
+            TopNav: 'app/component/TopNav.jsx',
+            LocationDropDown: 'app/component/LocationDropDown.jsx',
             loginApi:'app/api/loginApi.jsx',
+            locationDropDownApi:'app/api/locationDropDownApi.jsx',
             loginApi: 'app/api/loginApi.jsx',
             getCurrentUserApi: 'app/api/getCurrentUser.jsx'
 
@@ -54,5 +57,5 @@ module.exports={
         contentBase: path.resolve(__dirname),
         publicPath: '/'
     },
-    devtool: 'cheap-module-eval-source-map'
+    devtool:'cheap-module-eval-source-map'
 };

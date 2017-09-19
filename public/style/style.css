@@ -5,11 +5,19 @@ html,body{
     display: block;
     margin: 0 auto;
     font-family: Poppins, Georgia, serif;
+
 }
-.log_body{
+#app{
+    height: 100%;
+    width: 100%;
+}
+
+.bg_color{
     background: linear-gradient(-222deg, rgba(114,118,255,0.77) 0%, rgba(80,84,255,0.92) 64%, rgba(80,83,255,0.92) 65%, rgba(74,78,255,0.94) 76%, #3E41FF 100%);
-    width: 100vw;
-    height: 100vh;
+    min-height: 407px;
+    min-width: 407px;
+    height: 100%;
+    width: 100%;
 }
 .emp{
     height: 22vh;
@@ -24,6 +32,7 @@ html,body{
     color: #4A4A4A;
     letter-spacing: -1.6px;
     text-align: center;
+
 }
 
 input:focus,
@@ -39,13 +48,18 @@ button:focus {
     width: 452px;
     height: 407px;
     margin: auto;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .box_inside{
     position: absolute;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    vertical-align: middle;
 }
 
 .log_user,
@@ -78,13 +92,14 @@ button:focus {
     letter-spacing: -0.8px;
 }
 
+
 .anly_body{
     background-color: #F5F8FD;
 
 }
 
-.nav_bar{
-    height: auto;
+.side_nav {
+    height: 100%;
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
     font-family: Poppins-SemiBold, Georgia, serif;
@@ -92,7 +107,6 @@ button:focus {
     color: #B2B2BE;
     letter-spacing: -0.8px;
     text-align:center;
-    position: absolute;
 }
 
 .logo_holder{
@@ -115,18 +129,19 @@ button:focus {
     border: 1px solid #D3D3D5;
 }
 
-.nav_bar ul {
+.side_nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: inherit;
     overflow: auto;
     text-align: left;
     text-indent: 15px;
     letter-spacing: -0.8px;
+
 }
 
-.nav_bar li a {
+.side_nav li a {
     display: block;
     color: #B2B2BE;
     text-decoration: none;
@@ -134,16 +149,17 @@ button:focus {
 
 }
 
-.nav_bar li a.active {
+.side_nav  li a.active {
     background-color: #E4E4FD;
     color: #3E41FF;
 }
 
-.nav_bar li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+
+.side_nav  li a:hover:not(.active) {
+    background-color: #E4E4FD;
+    color: #3E41FF;
 }
-.nav_bar li a span.noti {
+.side_nav li a span.noti {
     background-color: #B2B2BE;
     color: #FFFFFF;
     width: 60px;
@@ -153,10 +169,7 @@ button:focus {
 }
 
 .headbar{
-    width: 87vw;
     height: 7.68vh;
-    left: 13vw;
-    float: right;
     margin:0 auto;
     background-color: #FFFFFF;
 }
@@ -168,6 +181,77 @@ button:focus {
     float: right;
     background-color: #F5F8FD;
 }
+.bg_blu{
+    background-color: #F5F8FD;
+}
+
+.analytics_box1{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 14px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
+    padding: 20px;
+    margin: 25px;
+    background-color: #FFFFFF;
+    box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
+    border-radius: 8px;
+}
+.analytics_box2{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 14px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
+    padding: 20px;
+    margin: 25px 25px 25px 0;
+    background-color: #FFFFFF;
+    box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
+    border-radius: 8px;
+}.analytics_box3{
+     font-family: Poppins-Medium, Georgia, serif;
+     font-size: 14px;
+     color: #97A2A4;
+     letter-spacing: -0.75px;
+     padding: 20px;
+     margin: 0 25px 25px 25px;
+     background-color: #FFFFFF;
+     box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
+     border-radius: 8px;
+ }.analytics_box4{
+      font-family: Poppins-Medium, Georgia, serif;
+      font-size: 14px;
+      color: #97A2A4;
+      letter-spacing: -0.75px;
+      padding: 20px;
+      margin: 0 25px 25px 0;
+      background-color: #FFFFFF;
+      box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
+      border-radius: 8px;
+
+  }
+
+.pro_curve{
+    background: url('../images/ProgressCurve.png') no-repeat center;
+    height: 175px;
+
+}
+.center_curve{
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ctr_no{
+    font-family: Poppins-Light, Georgia, serif;
+    font-size: 50px;
+    color: #464646;
+    letter-spacing: 1.1px;
+}
+
+.gjob{
+    color: #4A4A4A;
+}
 
 .Cprofile{
     width:40px;
@@ -177,72 +261,12 @@ button:focus {
     margin: 0 21px;
 }
 
-.box_review{
-    font-family: Poppins-Medium, Georgia, serif;
-    font-size: 14px;
-    color: #97A2A4;
-    letter-spacing: -0.75px;
-    width: 30vw;
-    padding: 20px;
-    height: 42vh;
-    margin: 25px;
-    float: left;
-    background-color: #FFFFFF;
-    box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
-    border-radius: 8px;
-}
-
-.review_head, .rating_head, .senti_head, .ctr_head{
+.review_head{
     font-family: Poppins-Medium, Georgia, serif;
     font-size: 15px;
     color: #4A4A4A;
     letter-spacing: -0.8px;
     padding: 25px;
-}
-
-.box_avg_rating{
-    width: 30vw;
-    height: 42vh;
-    padding: 20px;
-    margin: 25px 25px 25px 0;
-    float: left;
-    background-color: #FFFFFF;
-    box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
-    border-radius: 8px;
-    font-family: Poppins-Medium, Georgia, serif;
-    font-size: 15px;
-    color: #4A4A4A;
-    letter-spacing: -0.8px;
-}
-
-.box_sentiment{
-    width: 20vw;
-    height: 42vh;
-    padding: 20px;
-    margin: 0 25px 25px 25px;
-    float: left;
-    background-color: #FFFFFF;
-    box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
-    border-radius: 8px;
-    font-family: Poppins-Medium, Georgia, serif;
-    font-size: 15px;
-    color: #4A4A4A;
-    letter-spacing: -0.8px;
-}
-
-.box_CTR{
-    width: 20vw;
-    height: 42vh;
-    padding: 20px;
-    margin: 0 25px 25px 0;
-    float: left;
-    background-color: #FFFFFF;
-    box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
-    border-radius: 8px;
-    font-family: Poppins-Medium, Georgia, serif;
-    font-size: 15px;
-    color: #4A4A4A;
-    letter-spacing: -0.8px;
 }
 
 .revno{
@@ -295,6 +319,11 @@ button:focus {
     margin: 5px;
 }
 
+figure{
+    display: inline-block;
+    margin: 5px;
+}
+
 .site_review img{
     display: inline-block;
     width: 33px;
@@ -318,11 +347,10 @@ button:focus {
     letter-spacing: -0.75px;
 }
 .senti_body{
-    margin:10%;
+    margin:10px;
     text-align: center;
 }
 .reco_no{
-
     font-family: Poppins-Light, Georgia, serif;
     font-size: 30px;
     color: #464646;
@@ -341,4 +369,63 @@ button:focus {
     font-size: 24px;
     color: #ED40DB;
     letter-spacing: 0.53px;
+}
+
+.rev_body{
+    width: 87vw;
+    height: auto;
+    left: 13vw;
+    float: right;
+    background-color: #F5F8FD;
+    font-family: Poppins-Regular, Georgia, serif;
+    font-size: 20px;
+    color: #4A4A4A;
+    letter-spacing: -1.07px;
+}
+
+.all_reviews{
+    width: 50%;
+}
+.all_review_head{
+
+}
+
+.form_filter{
+    float: right;
+}
+
+.srch_button{
+    width: 350px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D5;
+    border-radius: 8px;
+    font-family: Poppins-SemiBold, Georgia, serif;
+    font-size: 15px;
+    color: #97A2A4;
+    text-align: center;
+    letter-spacing: -0.68px;
+}
+
+.btn_filter{
+    width: 98px;
+    height: 40px;
+    background: #E4E4FD;
+    border: 1px solid #D3D3D5;
+    border-radius: 8px;
+    font-family: Poppins-SemiBold, Georgia, serif;
+    font-size: 15px;
+    color: #3E41FF;
+    letter-spacing: -0.68px;
+}
+
+.days_ago{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 15px;
+    color: #B2B2BE;
+    letter-spacing: -0.8px;
+    float: right;
+}
+.nav_bar > li{
+    list-style: none;
 }
