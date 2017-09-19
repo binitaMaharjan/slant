@@ -3,8 +3,9 @@ var Analytics = require('Analytics');
 var NavSideBar = require('NavSideBar');
 var TopNav = require('TopNav');
 
-var Dashboard = React.createClass({
-    render: function () {
+var Dashboard = (props)=>{
+
+   /* render: function () {*/
         return (
             <div className="row">
                 <div className="col-sm-2">
@@ -16,16 +17,21 @@ var Dashboard = React.createClass({
                             <TopNav/>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-sm-12 bg_blu">
-                            <Analytics/>
-                        </div>
+                    <div>
+                        {props.children}
                     </div>
+                    {/*<div className="row">*/}
+                        {/*<div className="col-sm-12 bg_blu">*/}
+                            {/*<Analytics/>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
 
                 </div>
             </div>
         );
     }
+/*
 });
+*/
 
 module.exports= Dashboard;
