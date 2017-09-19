@@ -21,7 +21,7 @@ module.exports={
         root:__dirname,
         alias:{
             LoginForm: 'app/component/LoginForm.jsx',
-           LoginMessage: 'app/component/LoginMessage.jsx',
+            LoginMessage: 'app/component/LoginMessage.jsx',
             Login: 'app/component/Login.jsx',
             Dashboard: 'app/component/Dashboard.jsx',
             NavSideBar: 'app/component/NavSideBar.jsx',

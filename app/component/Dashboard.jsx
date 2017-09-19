@@ -2,8 +2,6 @@ var React= require('react');
 var Analytics = require('Analytics');
 var NavSideBar = require('NavSideBar');
 var TopNav = require('TopNav');
-var locationDropDownApi = require('locationDropDownApi');
-var LocationStats = require('LocationStats');
 
 var Dashboard = React.createClass({
     getInitialState: function () {
@@ -63,13 +61,11 @@ var Dashboard = React.createClass({
                 <div className="col-sm-10">
                     <div className="row">
                         <div className="col-sm-12">
-                            <TopNav locationArray={locationArray}/>
+                            <TopNav/>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-sm-12 bg_blu">
-                            <Analytics/>
-                        </div>
+                    <div>
+                        {props.children}
                     </div>
 
                 </div>
