@@ -1,10 +1,13 @@
 {
-  "name": "reactweather",
+  "name": "Slant",
   "version": "1.0.0",
-  "description": "Simple weather app",
+  "description": "Slant app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build",
+    "build": "webpack -d && copy public\\index.html app\\index.html && webpack-dev-server --history-api-fallback --content-base  public\\ --inline --hot ",
+    "build:prod": "webpack -d && copy public\\index.html app\\index.html"
   },
   "author": "Prashant Shrestha",
   "license": "ISC",
@@ -14,7 +17,10 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redirect": "^1.0.0",
-    "react-router": "^2.0.0"
+    "react-router": "^2.0.0",
+    "react-tabs": "^2.0.0",
+    "universal-cookie": "latest",
+    "yargs": "^9.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.5.1",
@@ -28,6 +34,7 @@
     "sass-loader": "^6.0.6",
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.13"
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }

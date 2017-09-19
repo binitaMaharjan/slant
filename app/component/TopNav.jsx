@@ -2,14 +2,14 @@ var React = require('react');
 var {Link, IndexLink} = require('react-router');
 import LocationDropDown from 'LocationDropDown';
 
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+var {Route, Router, IndexRoute, hashHistory,browserHistory} = require('react-router');
 
 
 var TopNav = React.createClass({
     handleLogout: function (e) {
         e.preventDefault();
         localStorage.removeItem('token');
-        hashHistory.push("/login");
+        browserHistory.push("/login");
         return;
     },
     render:function () {

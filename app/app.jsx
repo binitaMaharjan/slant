@@ -1,9 +1,11 @@
 // React Component
 var React = require('react');
 var ReactDOM = require('react-dom');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+var {Route, Router, IndexRoute, hashHistory,browserHistory} = require('react-router');
 var Dashboard = require('Dashboard');
 var Login = require('Login');
+var Review = require('Review');
+var Analytics = require('Analytics');
 //Load foundation
 
 function requireAuth(nextState, replace) {
@@ -20,9 +22,15 @@ function requireAuth(nextState, replace) {
 
 );*/
 ReactDOM.render(
-    <Router history={hashHistory}>
-        <Route path="/" component={Dashboard} onEnter={requireAuth}/>
-        <Route path="login" component={Login}/>
+    <Router history={browserHistory}>
+        <Route path={"/"} component={Dashboard} onEnter={requireAuth}>
+            <Route component={Analytics} path="analytics" pattern="/analytics"  />
+            <Route component={Review} path="review" pattern="/review"  />
+            {/*<Route exactly component={Customer} pattern="/path2" />*/}
+            {/*<Route exactly component={Page3} pattern="/path3" />*/}
+        </Route>
+        <Route path={"/login"} component={Login}/>
+
     </Router>,
     document.getElementById('app')
 );
