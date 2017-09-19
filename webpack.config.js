@@ -30,6 +30,7 @@ module.exports={
             LocationDropDown: 'app/component/LocationDropDown.jsx',
             loginApi:'app/api/loginApi.jsx',
             locationDropDownApi:'app/api/locationDropDownApi.jsx',
+            LocationStats:'app/api/LocationStats.jsx',
 
         },
         extensions:['','.js','.jsx']

@@ -13,9 +13,10 @@ var TopNav = React.createClass({
         return;
     },
     render:function () {
+        var {locationArray} = this.props;
         return(
             <div className="headbar">
-                <LocationDropDown handleChangedLocation={this.handleChangedLocation}/>
+                <LocationDropDown locationArray={locationArray}/>
                 <div className="btn-group navbar-right slant-logout">
                     <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Action <span className="caret"></span>
