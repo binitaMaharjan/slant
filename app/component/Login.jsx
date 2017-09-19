@@ -2,7 +2,7 @@ var React = require('react');
 var LoginForm = require('LoginForm');
 var LoginMessage = require('LoginMessage');
 var Cookies = require('universal-cookie');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+var {Route, Router, IndexRoute, hashHistory,browserHistory} = require('react-router');
 var loginApi = require('loginApi');
 const cookies = new Cookies();
 
@@ -31,8 +31,6 @@ var Login = React.createClass({
                     cookies.set('user', result, {path: '/'});
                     localStorage.setItem("user", result);
 
-                    console.log(res.data);
-
                 });
             }
 
@@ -43,7 +41,7 @@ var Login = React.createClass({
             cookies.set('access_token', access_token, {path: '/'});
 
             localStorage.setItem("token", access_token);
-            hashHistory.push("/");
+            browserHistory.push("/");
         }, function (e) {
             that.setState({
                 isLoading: false,

@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path  = require('path');
 module.exports={
     entry: [
         'script!jquery/dist/jquery.min.js',
@@ -46,6 +47,12 @@ module.exports={
             }
         ]
 
+    },
+    devServer: {
+        historyApiFallback: true,
+        hot: true,
+        contentBase: path.resolve(__dirname),
+        publicPath: '/'
     },
     devtool: 'cheap-module-eval-source-map'
 };

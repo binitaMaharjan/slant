@@ -1,12 +1,12 @@
 {
-  "name": "Slant Dashboard",
+  "name": "Slant",
   "version": "1.0.0",
   "description": "Slant app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build",
-    "build": "webpack -d && copy public\\index.html app\\index.html && webpack-dev-server --content-base  src\\ --inline --hot",
+    "build": "webpack -d && copy public\\index.html app\\index.html && webpack-dev-server --history-api-fallback --content-base  public\\ --inline --hot ",
     "build:prod": "webpack -d && copy public\\index.html app\\index.html"
   },
   "author": "Prashant Shrestha",
@@ -18,7 +18,8 @@
     "react-dom": "^0.14.7",
     "react-redirect": "^1.0.0",
     "react-router": "^2.0.0",
-    "universal-cookie": "latest"
+    "universal-cookie": "latest",
+    "yargs": "^9.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.5.1",
@@ -32,7 +33,7 @@
     "sass-loader": "^6.0.6",
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.13",
-    "webpack-dev-server": "^2.8.2"
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }
