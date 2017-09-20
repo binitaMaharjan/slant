@@ -66,7 +66,7 @@ var Dashboard = React.createClass({
                         </div>
                     </div>
                     <div>
-                        <Analytics statsJson ={statsJson}/>
+                        {this.props.children}
                     </div>
                 </div>
             </div>

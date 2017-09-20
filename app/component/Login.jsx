@@ -2,12 +2,10 @@ var React = require('react');
 var LoginForm = require('LoginForm');
 var LoginMessage = require('LoginMessage');
 var Cookies = require('universal-cookie');
-var {Route, Router, IndexRoute, hashHistory,browserHistory} = require('react-router');
+var {Route, Router, IndexRoute, hashHistory, browserHistory} = require('react-router');
 var loginApi = require('loginApi');
 var getCurrentUser = require('getCurrentUser');
 const cookies = new Cookies();
-
-var getCurrentUser= require('getCurrentUser');
 var Login = React.createClass({
     getInitialState: function () {
         return {
@@ -26,9 +24,9 @@ var Login = React.createClass({
             access_token: undefined,
         });
         loginApi.getLoggedIn(email, password).then(function (access_token) {
-            if(access_token){
+            if (access_token) {
                 getCurrentUser.getCurrentUser().then(function (res) {
-                    var  result = JSON.stringify(res.data);
+                    var result = JSON.stringify(res.data);
                     cookies.set('user', result, {path: '/'});
                     localStorage.setItem("user", result);
 
