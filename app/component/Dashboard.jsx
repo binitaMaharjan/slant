@@ -23,6 +23,7 @@ var Dashboard = React.createClass({
 
             that.setState({
                 locationArray:jsonString,
+                selectedLocation: jsonString.locations[0].id
             })
         },function (e) {
             that.setState({
@@ -46,15 +47,12 @@ var Dashboard = React.createClass({
         })
     },
     render: function () {
-        var {locationArray,statsJson} = this.state;
+        var {locationArray,statsJson, selectedLocation} = this.state;
         if( locationArray.locations === undefined ) {
             return <div className="row">Loading...</div>
         }
-        if(locationArray.locations[0] !== undefined){
-            if(statsJson === '') {
-                this.getLocationStatistics(locationArray.locations[0].id);
-            }
-
+        if(selectedLocation !== '' && statsJson === ''){
+                this.getLocationStatistics(selectedLocation);
         }
         return (
             <div className="row">
@@ -67,12 +65,8 @@ var Dashboard = React.createClass({
                             <TopNav locationArray={locationArray} onLocationChangeGraph={this.handleLocationChange}/>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-sm-12 bg_blu">
-
-                            <Customer/>
-
-                        </div>
+                    <div>
+                        {React.cloneElement(this.props.children, { statsJson: statsJson, selectedLocation: selectedLocation })}
                     </div>
                 </div>
             </div>
