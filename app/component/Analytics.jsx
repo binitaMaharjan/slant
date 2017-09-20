@@ -4,6 +4,58 @@ var {Link, IndexLink} = require('react-router');
 
 var Analytics = React.createClass({
   render:function () {
+      var {statsJson} = this.props;
+      var total_reviews = 0;
+      var reviews_by_site = [];
+      var average_rating = 0;
+      if(statsJson !== ''){
+
+
+          total_reviews = statsJson.reviews.total_count;
+          reviews_by_site = statsJson.reviews.by_site;
+          reviews_by_site.sort(function (obj1, obj2) {
+              return obj1.order - obj2.order;
+
+          })
+          average_rating = statsJson.reviews.average_rating;
+      }
+      var renderSites = () =>{
+          if(reviews_by_site.length>0) {
+              return reviews_by_site.map((site, index) => {
+                  if(index!==0) {
+                      return (
+                          <span key={site.url}>
+                          <a href={site.url}> <img src="images/Oval.png" title={site.site.name}/></a>
+                          <a href={site.response_url}>
+                              <figcaption>{site.average_rating}</figcaption>
+                          </a>
+                      </span>
+                      )
+                  }
+              })
+              }
+          return <div>Loading...</div>
+      }
+      var renderTopSitesReview =()=>{
+          if(reviews_by_site.length >0){
+              var site = reviews_by_site[0];
+              return(
+                  <div>
+                     <div className="col-sm-6">
+                              <img src="images/Oval.png"/><span className="big">{site.average_rating}</span><img src="images/smallreview.png"/>
+                              <br/>
+                              <span>{site.site.name} is your top rated review site.</span>
+                          </div>
+                          <div className="col-sm-6">
+                              <img src="images/smileycolor.png"/><span className="big">+{site.total_reviews}</span>
+                              <br/>
+                              <span>positive reviews gained this month.</span>
+                          </div>
+
+                  </div>
+              )
+          }
+      }
       return(
           <div>
 
@@ -18,42 +70,20 @@ var Analytics = React.createClass({
                       <hr/>
                       <div className="row">
                           <div className="col-sm-12">
-                              <span className="revno">316</span>
+                              <span className="revno">{total_reviews}</span>
                           </div>
                       </div>
                       <div className="row">
-                          <div className="col-sm-6">
-                              <img src="images/Oval.png"/><span className="big">4.8</span><img src="images/smallreview.png"/>
-                              <br/>
-                              <span>Facebook is your top rated review site.</span>
-                          </div>
-                          <div className="col-sm-6">
-                              <img src="images/smileycolor.png"/><span className="big">+41</span>
-                              <br/>
-                              <span>positive reviews gained this month.</span>
-                          </div>
+                          {renderTopSitesReview()}
                       </div>
+
+
                       <hr width="90%"/>
                       <div className="row">
                           <div className="col-sm-12">
                               <span>Sites with review</span>
                               <br/>
-                              <figure>
-                                  <img src="images/Oval.png"/>
-                                  <figcaption>100</figcaption>
-                              </figure>
-                              <figure>
-                                  <img src="images/Oval.png"/>
-                                  <figcaption>87</figcaption>
-                              </figure>
-                              <figure>
-                                  <img src="images/Oval.png"/>
-                                  <figcaption>56</figcaption>
-                              </figure>
-                              <figure>
-                                  <img src="images/Oval.png"/>
-                                  <figcaption>21</figcaption>
-                              </figure>
+                              {renderSites()}
                           </div>
                       </div>
                   </div>
@@ -67,7 +97,7 @@ var Analytics = React.createClass({
                       <hr/>
                       <div className="row">
                           <div className="col-sm-12">
-                              <span className="rat">4.5</span>&#8195;<img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/>
+                              <span className="rat">100</span>&#8195;<img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/>
 
                           </div>
                       </div>

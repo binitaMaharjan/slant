@@ -28,6 +28,9 @@ var Dashboard = React.createClass({
             });
         })
     },
+    handleLocationChange: function (location) {
+        this.getLocationStatistics(location);
+    },
     getLocationStatistics:function(location_id) {
         var that = this;
         LocationStats.getLocationStats(location_id).then(function (jsonString) {
@@ -48,11 +51,7 @@ var Dashboard = React.createClass({
         if(locationArray.locations[0] !== undefined){
             if(statsJson === '') {
                 this.getLocationStatistics(locationArray.locations[0].id);
-                if(statsJson.data !== undefined){
-                    console.log(statsJson.data);
-                }
             }
-            console.log(statsJson);
 
         }
         return (
@@ -63,11 +62,11 @@ var Dashboard = React.createClass({
                 <div className="col-sm-10">
                     <div className="row">
                         <div className="col-sm-12">
-                            <TopNav locationArray={locationArray}/>
+                            <TopNav locationArray={locationArray} onLocationChangeGraph={this.handleLocationChange}/>
                         </div>
                     </div>
                     <div>
-                        <Analytics/>
+                        <Analytics statsJson ={statsJson}/>
                     </div>
                 </div>
             </div>

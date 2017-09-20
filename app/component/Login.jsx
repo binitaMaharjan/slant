@@ -27,7 +27,7 @@ var Login = React.createClass({
         });
         loginApi.getLoggedIn(email, password).then(function (access_token) {
             if(access_token){
-                getCurrentUserApi.getCurrentUser().then(function (res) {
+                getCurrentUser.getCurrentUser().then(function (res) {
                     var  result = JSON.stringify(res.data);
                     cookies.set('user', result, {path: '/'});
                     localStorage.setItem("user", result);

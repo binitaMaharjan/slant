@@ -5,21 +5,10 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 
 var LocationDropDown = React.createClass({
-    /*componentDidMount() {
-        var that = this;
-        var user_id = '9597eec9-2fbf-4b44-a594-11d1db8048a5';
-        locationDropDownApi.getLocationByUser(user_id).then(function (jsonString) {
-            that.setState({
-                locationArray:jsonString,
-            })
-        },function (e) {
-            that.setState({
-                errorMessage:e.message
-            });
-        })
-    },*/
     onLocationChange: function (e) {
+        console.log(e.target.value);
         this.setState({selectedLocation: e.target.value});
+        this.props.onLocationChangeStat(e.target.value);
     },
     render:function () {
         var {locationArray, errorMessage, selectedLocation} = this.props;
@@ -38,7 +27,6 @@ var LocationDropDown = React.createClass({
             <div>
                 <p>rest{selectedLocation}</p>
                 <select id="location" name="location" className="form-control col-md-4" onChange={this.onLocationChange}>
-                    <option value="test">test</option>
                     {renderOptions()}
                 </select>
             </div>
