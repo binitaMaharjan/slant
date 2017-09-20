@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build",
-    "build": "webpack -d && copy public\\index.html app\\index.html && webpack-dev-server --history-api-fallback --content-base  public\\ --inline --hot ",
-    "build:prod": "webpack -d && copy public\\index.html app\\index.html"
+    "build": "webpack -d && cp public/index.html app/index.html && webpack-dev-server --history-api-fallback --content-base  public/ --inline --hot ",
+    "build:prod": "webpack -d && cp public/index.html app/index.html"
   },
   "author": "Prashant Shrestha",
   "license": "ISC",

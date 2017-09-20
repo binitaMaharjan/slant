@@ -65,6 +65,7 @@ var LoginForm = React.createClass({
      },
     render:function () {
         return(
+
             <div className="container">
                 <div className="row">
                     <div className="col-sm-4">

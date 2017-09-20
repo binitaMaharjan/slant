@@ -383,11 +383,57 @@ figure{
     letter-spacing: -1.07px;
 }
 
+.big_review{
+    background-color: #FFFFFF;
+}
+
 .all_reviews{
-    width: 50%;
+    margin: 25px;
 }
 .all_review_head{
+    font-family: Poppins-Regular, Georgia, serif;
+    font-size: 20px;
+    color: #4A4A4A;
+    letter-spacing: -0.91px;
+}
+.review_tab_title{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 14px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
+}
+.onl_review{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 15px;
+    color: #97A2A4;
+    letter-spacing: -0.8px;
+    margin: 17px;
+}
 
+.onl_review_title{
+
+    font-family: Poppins-SemiBold, Georgia, serif;
+    font-size: 15px;
+    color: #4A4A4A;
+    letter-spacing: -0.8px;
+}
+.respond{
+    font-family: Poppins-SemiBold, Georgia, serif;
+    font-size: 15px;
+    color: #38D996;
+    letter-spacing: -0.8px;
+    margin: 17px;
+}
+.review_box{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 14px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
+    padding: 20px;
+    margin: 15px 15px 0 25px;
+    background-color: #FFFFFF;
+    box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
+    border-radius: 8px;
 }
 
 .form_filter{
@@ -395,8 +441,6 @@ figure{
 }
 
 .srch_button{
-    width: 350px;
-    height: 40px;
     background-color: #FFFFFF;
     border: 1px solid #D3D3D5;
     border-radius: 8px;
@@ -405,11 +449,11 @@ figure{
     color: #97A2A4;
     text-align: center;
     letter-spacing: -0.68px;
+    width: 300px;
+    height: 40px;
 }
 
 .btn_filter{
-    width: 98px;
-    height: 40px;
     background: #E4E4FD;
     border: 1px solid #D3D3D5;
     border-radius: 8px;
@@ -417,6 +461,8 @@ figure{
     font-size: 15px;
     color: #3E41FF;
     letter-spacing: -0.68px;
+    width: 98px;
+    height: 40px;
 }
 
 .days_ago{
@@ -426,6 +472,43 @@ figure{
     letter-spacing: -0.8px;
     float: right;
 }
-.nav_bar > li{
-    list-style: none;
+
+.table_box{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 14px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
+    margin: 0 15px 0 25px;
+    background-color: #FFFFFF;
+    box-shadow: 1px 3px 11px 0 rgba(0,0,0,0.03);
+    border-radius: 8px;
+}
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    vertical-align: middle;
+}
+
+.table_box table thead tr{
+    font-family: Poppins-Medium, Georgia, serif;
+    font-size: 14px;
+    color: #97A2A4;
+    letter-spacing: -0.75px;
+    height: 74px;
+}
+
+.table_box table tbody tr{
+    font-family: Poppins-Medium,  Georgia, serif;
+    font-size: 14px;
+    color: #4A4A4A;
+    letter-spacing: -0.75px;
+    height: 74px;
+}
+
+.loc_dd select{
+    background-color: #FFFFFF;
+    border: none;
 }

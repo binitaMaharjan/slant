@@ -18,10 +18,11 @@ var TopNav = React.createClass({
             <div className="headbar">
                 <LocationDropDown locationArray={locationArray}/>
                 <div className="btn-group navbar-right slant-logout">
-                    <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Action <span className="caret"></span>
-                    </button>
+
+                    <img src="images/CustomerProfile.png" className="dropdown-toggle Cprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
+
                     <ul className="dropdown-menu">
+                        <li><Link to="#">Change Password</Link></li>
                         <li><Link to="#" onClick={this.handleLogout}>Logout</Link></li>
                     </ul>
                 </div>

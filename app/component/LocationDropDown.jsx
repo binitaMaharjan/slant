@@ -35,11 +35,14 @@ var LocationDropDown = React.createClass({
             return <div>Loading...</div>
         }
         return(
-            <div>
+            <div className="dropdown loc_dd">
                 <p>rest{selectedLocation}</p>
-                <select id="location" name="location" className="form-control col-md-4" onChange={this.onLocationChange}>
-                    <option value="test">test</option>
-                    {renderOptions()}
+                <select id="location" name="location" className="col-sm-4" onChange={this.onLocationChange}>
+                    <optgroup label="Select Location">
+                        <option value="test">test</option>
+                        {renderOptions()}
+                    </optgroup>
+
                 </select>
             </div>
 

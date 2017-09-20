@@ -1,4 +1,4 @@
-var React = require('react');
+    var React = require('react');
 var LoginForm = require('LoginForm');
 var LoginMessage = require('LoginMessage');
 var Cookies = require('universal-cookie');
@@ -27,7 +27,7 @@ var Login = React.createClass({
         });
         loginApi.getLoggedIn(email, password).then(function (access_token) {
             if(access_token){
-                getCurrentUserApi.getCurrentUser().then(function (res) {
+                getCurrentUser.getCurrentUser().then(function (res) {
                     var  result = JSON.stringify(res.data);
                     cookies.set('user', result, {path: '/'});
                     localStorage.setItem("user", result);
@@ -66,7 +66,7 @@ var Login = React.createClass({
         }
 
         return (
-            <div className="container log_body">
+            <div className="bg_color">
                 <LoginForm onLoginButtonClicked={this.onLoginButtonClicked}/>
                 {renderMessage()}
             </div>
