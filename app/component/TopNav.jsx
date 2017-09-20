@@ -12,11 +12,14 @@ var TopNav = React.createClass({
         browserHistory.push("/login");
         return;
     },
+    handleLocationChange: function(location){
+        this.props.onLocationChangeGraph (location);
+    },
     render:function () {
         var {locationArray} = this.props;
         return(
             <div className="headbar">
-                <LocationDropDown locationArray={locationArray}/>
+                <LocationDropDown locationArray={locationArray} onLocationChangeStat={this.handleLocationChange}/>
                 <div className="btn-group navbar-right slant-logout">
 
                     <img src="images/CustomerProfile.png" className="dropdown-toggle Cprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
