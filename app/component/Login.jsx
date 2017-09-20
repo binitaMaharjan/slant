@@ -6,8 +6,6 @@ var {Route, Router, IndexRoute, hashHistory,browserHistory} = require('react-rou
 var loginApi = require('loginApi');
 var getCurrentUser = require('getCurrentUser');
 const cookies = new Cookies();
-
-var getCurrentUser= require('getCurrentUser');
 var Login = React.createClass({
     getInitialState: function () {
         return {
@@ -27,7 +25,7 @@ var Login = React.createClass({
         });
         loginApi.getLoggedIn(email, password).then(function (access_token) {
             if(access_token){
-                getCurrentUserApi.getCurrentUser().then(function (res) {
+                getCurrentUser.getCurrentUser().then(function (res) {
                     var  result = JSON.stringify(res.data);
                     cookies.set('user', result, {path: '/'});
                     localStorage.setItem("user", result);
