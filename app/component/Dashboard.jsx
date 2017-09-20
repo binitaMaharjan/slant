@@ -2,6 +2,8 @@ var React= require('react');
 var Analytics = require('Analytics');
 var NavSideBar = require('NavSideBar');
 var TopNav = require('TopNav');
+var locationDropDownApi = require('locationDropDownApi');
+var LocationStats = require('LocationStats');
 
 var Dashboard = React.createClass({
     getInitialState: function () {
@@ -25,10 +27,6 @@ var Dashboard = React.createClass({
                 errorMessage:e.message
             });
         })
-
-        console.log(that.state.locations[0].id);
-
-
     },
     getLocationStatistics:function(location_id) {
         var that = this;
@@ -50,7 +48,11 @@ var Dashboard = React.createClass({
         if(locationArray.locations[0] !== undefined){
             if(statsJson === '') {
                 this.getLocationStatistics(locationArray.locations[0].id);
+                if(statsJson.data !== undefined){
+                    console.log(statsJson.data);
+                }
             }
+            console.log(statsJson);
 
         }
         return (
@@ -61,13 +63,12 @@ var Dashboard = React.createClass({
                 <div className="col-sm-10">
                     <div className="row">
                         <div className="col-sm-12">
-                            <TopNav/>
+                            <TopNav locationArray={locationArray}/>
                         </div>
                     </div>
                     <div>
-                        {props.children}
+                        <Analytics/>
                     </div>
-
                 </div>
             </div>
         );

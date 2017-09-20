@@ -4,9 +4,10 @@ var LoginMessage = require('LoginMessage');
 var Cookies = require('universal-cookie');
 var {Route, Router, IndexRoute, hashHistory,browserHistory} = require('react-router');
 var loginApi = require('loginApi');
+var getCurrentUser = require('getCurrentUser');
 const cookies = new Cookies();
 
-var getCurrentUserApi = require('getCurrentUserApi');
+var getCurrentUser= require('getCurrentUser');
 var Login = React.createClass({
     getInitialState: function () {
         return {
