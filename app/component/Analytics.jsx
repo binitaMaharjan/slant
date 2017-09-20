@@ -9,6 +9,7 @@ var Analytics = React.createClass({
       var reviews_by_site = [];
       var average_rating = 0;
       if(statsJson !== ''){
+          console.log(statsJson);
 
 
           total_reviews = statsJson.reviews.total_count;

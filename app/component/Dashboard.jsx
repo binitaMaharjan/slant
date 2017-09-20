@@ -66,7 +66,7 @@ var Dashboard = React.createClass({
                         </div>
                     </div>
                     <div>
-                        {this.props.children}
+                        {React.cloneElement(this.props.children, { statsJson: this.state.statsJson })}
                     </div>
                 </div>
             </div>
