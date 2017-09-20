@@ -70,7 +70,7 @@ var Dashboard = React.createClass({
                     <div className="row">
                         <div className="col-sm-12 bg_blu">
 
-                            <Customer/>
+                            <Review/>
 
                         </div>
                     </div>

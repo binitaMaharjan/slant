@@ -118,8 +118,99 @@ var Review = React.createClass({
                                         </div>
                                     </TabPanel>
 
-                                    <TabPanel>
-                                        <h2>Any content 2</h2>
+                                    <TabPanel className="bg_blu">
+                                        <div className="row">
+                                            <div className="col-sm-6 all_reviews">
+                                                <span className="all_review_head">All Private Feedback</span>
+                                                <form className="form_filter">
+                                                    <input className="srch_button" name="Search" placeholder="Search"/>&emsp;
+                                                    <button className="btn btn_primary btn_filter">Filter </button>
+                                                </form>
+                                            </div>
+                                            <div className="col-sm-6">
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-sm-6 review_box">
+                                                <div className="row">
+                                                    <div className="col-sm-12">
+                                                        <img src="images/Oval.png"/>&emsp;<span className="onl_review_title">Jeff Handy</span> &emsp;
+                                                        <img src="images/SmallSadie.png"/>
+                                                        <span className="days_ago"> 5 days ago</span>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-sm-12 ">
+                                                        <p className="onl_review">
+                                                            I know you know that online reviews are important for your business, but do you know how much they're really worth?
+                                                            Not only do a huge 91 percent of consumers read online reviews, but they trust reviews as much as recommendations from friends and family.
+                                                            To have a fighting chance in today’s digital world, your business needs to be consistently getting new reviews.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-sm-12">
+                                                        <a href="#"><span className="respond"> See Customer Info </span> </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-sm-6">
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-sm-6 review_box">
+                                                <div className="row">
+                                                    <div className="col-sm-12">
+                                                        <img src="images/Oval.png"/>&emsp;<span className="onl_review_title">Seth Jenkins</span> &emsp;
+                                                        <img src="images/SmallSadie.png"/>
+                                                        <span className="days_ago"> 10 days ago</span>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-sm-12 ">
+                                                        <p className="onl_review">
+                                                            I know you know that online reviews are important for your business, but do you know how much they're really worth?
+                                                            Not only do a huge 91 percent of consumers read online reviews, but they trust reviews as much as recommendations from friends and family.
+                                                            To have a fighting chance in today’s digital world, your business needs to be consistently getting new reviews.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-sm-12">
+                                                        <a href="#"><span className="respond"> See Customer Info </span> </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-sm-6">
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-sm-6 review_box">
+                                                <div className="row">
+                                                    <div className="col-sm-12">
+                                                        <img src="images/Oval.png"/>&emsp;<span className="onl_review_title">Brandon</span> &emsp;
+                                                        <img src="images/SmallSadie.png"/>
+                                                        <span className="days_ago"> 15 days ago</span>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-sm-12 ">
+                                                        <p className="onl_review">
+                                                            I know you know that online reviews are important for your business, but do you know how much they're really worth?
+                                                            Not only do a huge 91 percent of consumers read online reviews, but they trust reviews as much as recommendations from friends and family.
+                                                            To have a fighting chance in today’s digital world, your business needs to be consistently getting new reviews.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-sm-12">
+                                                        <a href="#"><span className="respond"> See Customer Info </span> </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-sm-6">
+                                            </div>
+                                        </div>
                                     </TabPanel>
 
                                 </Tabs>
