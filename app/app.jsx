@@ -6,6 +6,7 @@ var Dashboard = require('Dashboard');
 var Login = require('Login');
 var Review = require('Review');
 var Analytics = require('Analytics');
+var Customer = require('Customer');
 //Load foundation
 
 function requireAuth(nextState, replace) {
@@ -27,7 +28,7 @@ ReactDOM.render(
             <IndexRoute component={Analytics}/>
             <Route component={Analytics} path="analytics" pattern="/analytics"  />
             <Route component={Review} path="review" pattern="/review"  />
-            {/*<Route exactly component={Customer} pattern="/path2" />*/}
+            <Route exactly component={Customer} path="customer" pattern="/path2" />
             {/*<Route exactly component={Page3} pattern="/path3" />*/}
         </Route>
         <Route path={"/login"} component={Login}/>

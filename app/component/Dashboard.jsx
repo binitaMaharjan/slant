@@ -65,8 +65,12 @@ var Dashboard = React.createClass({
                             <TopNav locationArray={locationArray} onLocationChangeGraph={this.handleLocationChange}/>
                         </div>
                     </div>
-                    <div>
-                        {React.cloneElement(this.props.children, { statsJson: statsJson, selectedLocation: selectedLocation })}
+                    <div className="row">
+                        <div className="col-sm-12 bg_blu">
+
+                            {React.cloneElement(this.props.children,{statsJson: this.state.statsJson, selectedLocation: selectedLocation})}
+
+                        </div>
                     </div>
                 </div>
             </div>

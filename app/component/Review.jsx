@@ -4,6 +4,10 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 var Review = React.createClass({
     render:function(){
+        var {statsJson, selectedLocation} = this.props;
+        console.log("---------------------------");
+        console.log(statsJson);
+        console.log(selectedLocation);
         return (
 
             <div>
