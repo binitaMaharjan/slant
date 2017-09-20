@@ -24,6 +24,7 @@ function requireAuth(nextState, replace) {
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path={"/"} component={Dashboard} onEnter={requireAuth}>
+            <IndexRoute component={Analytics}/>
             <Route component={Analytics} path="analytics" pattern="/analytics"  />
             <Route component={Review} path="review" pattern="/review"  />
             {/*<Route exactly component={Customer} pattern="/path2" />*/}
