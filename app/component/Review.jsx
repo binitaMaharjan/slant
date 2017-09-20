@@ -133,6 +133,6 @@ var Review = React.createClass({
 
         )
     }
-})
+});
 
 module.exports = Review;

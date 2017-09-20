@@ -2,7 +2,7 @@
 var LoginForm = require('LoginForm');
 var LoginMessage = require('LoginMessage');
 var Cookies = require('universal-cookie');
-var {Route, Router, IndexRoute, hashHistory,browserHistory} = require('react-router');
+var {Route, Router, IndexRoute, hashHistory, browserHistory} = require('react-router');
 var loginApi = require('loginApi');
 var getCurrentUser = require('getCurrentUser');
 const cookies = new Cookies();

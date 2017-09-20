@@ -3,6 +3,7 @@ var Analytics = require('Analytics');
 var NavSideBar = require('NavSideBar');
 var TopNav = require('TopNav');
 var Review = require('Review');
+var Customer = require('Customer');
 var locationDropDownApi = require('locationDropDownApi');
 var LocationStats = require('LocationStats');
 
@@ -70,7 +71,7 @@ var Dashboard = React.createClass({
                     <div className="row">
                         <div className="col-sm-12 bg_blu">
 
-                            <Review/>
+                            <Customer/>
 
                         </div>
                     </div>

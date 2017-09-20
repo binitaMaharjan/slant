@@ -28,6 +28,7 @@ module.exports={
             Analytics: 'app/component/Analytics.jsx',
             TopNav: 'app/component/TopNav.jsx',
             Review: 'app/component/Review.jsx',
+            Customer: 'app/component/Customer.jsx',
             LocationDropDown: 'app/component/LocationDropDown.jsx',
             loginApi:'app/api/loginApi.jsx',
             locationDropDownApi:'app/api/locationDropDownApi.jsx',
