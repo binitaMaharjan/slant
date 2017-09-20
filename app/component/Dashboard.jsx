@@ -67,7 +67,7 @@ var Dashboard = React.createClass({
                         </div>
                     </div>
                     <div>
-                        <Analytics/>
+                        {this.props.children}
                     </div>
                 </div>
             </div>
