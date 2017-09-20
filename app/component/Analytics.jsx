@@ -2,7 +2,6 @@ var React = require('react');
 var {Link, IndexLink} = require('react-router');
 
 
-
 var Analytics = React.createClass({
   render:function () {
       return(

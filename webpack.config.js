@@ -1,26 +1,25 @@
 var webpack = require('webpack');
-var path = require('path');
-module.exports = {
+module.exports={
     entry: [
         'script!jquery/dist/jquery.min.js',
         './app/app.jsx'
     ],
-    externals: {
-        jquery: 'jQuery'
+    externals:{
+        jquery:'jQuery'
     },
-    plugins: [
+    plugins:[
         new webpack.ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery'
+            '$':'jquery',
+            'jQuery':'jquery'
         })
     ],
     output: {
         path: __dirname,
-        filename: './public/bundle.js'
+        filename:'./public/bundle.js'
     },
-    resolve: {
-        root: __dirname,
-        alias: {
+    resolve:{
+        root:__dirname,
+        alias:{
             LoginForm: 'app/component/LoginForm.jsx',
             LoginMessage: 'app/component/LoginMessage.jsx',
             Login: 'app/component/Login.jsx',
@@ -28,19 +27,18 @@ module.exports = {
             NavSideBar: 'app/component/NavSideBar.jsx',
             Analytics: 'app/component/Analytics.jsx',
             TopNav: 'app/component/TopNav.jsx',
-            LocationDropDown: 'app/component/LocationDropDown.jsx',
-            locationDropDownApi: 'app/api/locationDropDownApi.jsx',
-            loginApi: 'app/api/loginApi.jsx',
-            getCurrentUserApi: 'app/api/getCurrentUser.jsx',
             Review: 'app/component/Review.jsx',
-
-
+            LocationDropDown: 'app/component/LocationDropDown.jsx',
+            loginApi:'app/api/loginApi.jsx',
+            locationDropDownApi:'app/api/locationDropDownApi.jsx',
+            getCurrentUser:'app/api/getCurrentUser.jsx',
+            LocationStats:'app/api/LocationStats.jsx',
 
         },
-        extensions: ['', '.js', '.jsx']
+        extensions:['','.js','.jsx']
     },
-    module: {
-        loaders: [
+    module:{
+        loaders:[
             {
                 loader: 'babel-loader',
                 query: {
@@ -52,11 +50,5 @@ module.exports = {
         ]
 
     },
-    devServer: {
-        historyApiFallback: true,
-        hot: true,
-        contentBase: path.resolve(__dirname),
-        publicPath: '/'
-    },
-    devtool: 'cheap-module-eval-source-map'
+    devtool:'cheap-module-eval-source-map'
 };
