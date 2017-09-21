@@ -52,7 +52,7 @@ var Dashboard = React.createClass({
             .catch(error => console.log(error));
     },
     render: function () {
-        var {locationArray,statsJson, selectedLocation, statsJson, reviewsJson} = this.state;
+        var {locationArray,statsJson, selectedLocation,reviewsJson} = this.state;
         if( locationArray.locations === undefined ) {
             return <div className="row">Loading...</div>
         }
