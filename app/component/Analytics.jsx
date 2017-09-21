@@ -4,19 +4,59 @@ var {Link, IndexLink} = require('react-router');
 
 var Analytics = React.createClass({
   render:function () {
-      var {statsJson, selectedLocation} = this.props;
+      var {statsJson, selectedLocation, reviewsJson} = this.props;
+      var invitationJson = '';
       var total_reviews = 0;
       var reviews_by_site = [];
+      var reviews_by_rating = '';
       var average_rating = 0;
+      var max_rating = 0;
+      var rating_over_last_30_days=0;
+      var rating = [];
       if(statsJson !== ''){
+          invitationJson = statsJson.invitations;
           total_reviews = statsJson.reviews.total_count;
           reviews_by_site = statsJson.reviews.by_site;
+          reviews_by_rating = statsJson.reviews.by_rating;
           reviews_by_site.sort(function (obj1, obj2) {
               return obj1.order - obj2.order;
 
           })
           average_rating = statsJson.reviews.average_rating;
+          rating_over_last_30_days = statsJson.reviews.average_rating_delta_30_days;
       }
+      Object.keys(reviews_by_rating).forEach(function (key) {
+          // do something with obj[key]
+          rating.push(reviews_by_rating[key]);
+      });
+      max_rating = Math.max.apply(null,rating);
+      const ReviewsByRates = ()=>
+          <div>
+              {
+                  Object.entries(reviews_by_rating)
+                      .map(([key, value]) =>
+                          <div className="col-sm-12" key={key}>
+                              <div className="col-sm-1">
+                                  <img src="images/SmallSilverReview.png"/>&emsp;
+                              </div>
+                              <div className="col-sm-1">
+                                  <span className="big">{key}</span>&emsp;
+                              </div>
+                              <div className="col-sm-9">
+                                  <div className="progress">
+                                      <div className="progress-bar" role="progressbar"
+                                           aria-valuemin="0" aria-valuemax={max_rating} style={{width: value/max_rating*100+'%'}}>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div className="col-sm-1">
+                                  <span>{value}</span>
+                              </div>
+                          </div>
+                        )
+              }
+              </div>
+
       var renderSites = () =>{
           if(reviews_by_site.length>0) {
               return reviews_by_site.map((site, index) => {
@@ -35,6 +75,7 @@ var Analytics = React.createClass({
           return <div>Loading...</div>
       }
       var renderTopSitesReview =()=>{
+
           if(reviews_by_site.length >0){
               var site = reviews_by_site[0];
               return(
@@ -95,14 +136,20 @@ var Analytics = React.createClass({
                       <hr/>
                       <div className="row">
                           <div className="col-sm-12">
-                              <span className="rat">100</span>&#8195;<img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/><img src="images/GoldReview.png"/>
+                              <span className="rat">{Math.round(average_rating*10)/10}</span>
+                              &#8195;
+                              <img src="images/GoldReview.png"/>
+                              <img src="images/GoldReview.png"/>
+                              <img src="images/GoldReview.png"/>
+                              <img src="images/GoldReview.png"/>
+                              <img src="images/GoldReview.png"/>
 
                           </div>
                       </div>
                       <div className="row">
                           <div className="col-sm-12">
                               <img src="images/arrow.png"/>&emsp;
-                              <span className="big">4.2</span>
+                              <span className="big">{rating_over_last_30_days}</span>
                               <img src="images/SmallGoldReview.png"/>&emsp;
                               <span>Your rating over the last <br/>&#8195;&#8195;&#8195;&#8195;&#8195;&emsp;&nbsp; 30 days.</span>
                           </div>
@@ -110,30 +157,8 @@ var Analytics = React.createClass({
                       <br/>
                       <div className="row">
                           <div className="col-sm-12">
-                              <img src="images/SmallSilverReview.png"/>&emsp;
-                              <span className="big">5</span>&emsp;
-                              <img src="images/Bar5.png"/>&emsp;
-                              <span>123</span>
-                              <br/>
-                              <img src="images/SmallSilverReview.png"/>&emsp;
-                              <span className="big">4</span>&emsp;
-                              <img src="images/Bar4.png"/>&emsp;
-                              <span>87</span>
-                              <br/>
-                              <img src="images/SmallSilverReview.png"/>&emsp;
-                              <span className="big">3</span>&emsp;
-                              <img src="images/Bar3.png"/>&emsp;
-                              <span>21</span>
-                              <br/>
-                              <img src="images/SmallSilverReview.png"/>&emsp;
-                              <span className="big">2</span>&emsp;
-                              <img src="images/Bar2.png"/>&emsp;
-                              <span>13</span>
-                              <br/>
-                              <img src="images/SmallSilverReview.png"/>&emsp;
-                              <span className="big">1</span>&emsp;
-                              <img src="images/Bar1.png"/>&emsp;
-                              <span>0</span>
+                              <ReviewsByRates/>
+
                           </div>
                       </div>
                   </div>
@@ -152,7 +177,9 @@ var Analytics = React.createClass({
                       <hr/>
                       <div className="row">
                           <div className="col-sm-12 senti_body">
-                              <span className="reco_no">224</span> &emsp;<img src="images/BigSmiley.png"/>&emsp; <span className="reco_per">71%</span>
+                              <span className="reco_no">{invitationJson.recommended}</span>
+                              &emsp;<img src="images/BigSmiley.png"/>&emsp;
+                              <span className="reco_per">{isNaN(invitationJson.recommended/invitationJson.sent*100)?0:invitationJson.recommended/invitationJson.sent*100}%</span>
                           </div>
                       </div>
                       <div className="row">
@@ -163,7 +190,9 @@ var Analytics = React.createClass({
                       <hr width="70%"/>
                       <div className="row">
                           <div className="col-sm-12 senti_body">
-                              <span className="reco_no">92</span> &emsp;<img src="images/BigSadie.png"/>&emsp; <span className="noreco_per">29%</span>
+                              <span className="reco_no">{invitationJson.not_recommended}</span>
+                              &emsp;<img src="images/BigSadie.png"/>&emsp;
+                              <span className="noreco_per">{isNaN(invitationJson.not_recommended/invitationJson.sent*100)?0:invitationJson.not_recommended/invitationJson.sent*100}%</span>
                           </div>
                       </div>
                       <div className="row">
@@ -183,12 +212,15 @@ var Analytics = React.createClass({
                       <div className="row">
                           <div className="col-sm-12 senti_body">
                               <div className="row">
-                                  <div className="col-sm-12 pro_curve">
-                                      <div className="center_curve">
-                                          <img src="images/BlueAirplane.png"/>
-                                          <br/>
-                                          <span className="ctr_no">69%</span>
-                                      </div>
+                                  <div className="progress-circ blue">
+                                        <span className="progress-left">
+                                                <span className="progress-bar"></span>
+                                        </span>
+                                        <span className="progress-right">
+                                                <span className="progress-bar"></span>
+                                        </span>
+                                      <div className="progress-value">
+                                          {isNaN(invitationJson.opened/invitationJson.sent*100)?0:invitationJson.opened/invitationJson.sent*100}%</div>
                                   </div>
                               </div>
                               <hr width="50%"/>
