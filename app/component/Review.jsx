@@ -4,9 +4,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 var Review = React.createClass({
     render:function(){
-        var {statsJson, selectedLocation} = this.props;
+        var {statsJson, selectedLocation, reviewsJson} = this.props;
         console.log("---------------------------");
-        console.log(statsJson);
+        console.log(reviewsJson);
         console.log(selectedLocation);
         return (
 

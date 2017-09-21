@@ -6,6 +6,7 @@ var Review = require('Review');
 var Customer = require('Customer');
 var locationDropDownApi = require('locationDropDownApi');
 var LocationStats = require('LocationStats');
+var axios = require('axios');
 
 var Dashboard = React.createClass({
     getInitialState: function () {
@@ -13,7 +14,8 @@ var Dashboard = React.createClass({
             locationArray: [],
             errorMessage: '',
             selectedLocation: '',
-            statsJson:''
+            statsJson:'',
+            reviewsJson:'',
         }
     },
     componentDidMount() {
@@ -36,18 +38,21 @@ var Dashboard = React.createClass({
     },
     getLocationStatistics:function(location_id) {
         var that = this;
-        LocationStats.getLocationStats(location_id).then(function (jsonString) {
-            that.setState({
-                statsJson:jsonString,
-            })
-        },function (e) {
-            that.setState({
-                errorMessage:e.message
-            });
-        })
+        const defaultURL = 'https://api.slantreviews.com/v2/locations/';
+        axios.all([
+            axios.get(defaultURL+location_id+'/stats',{ headers: { Authorization: localStorage.getItem('token') } }),
+            axios.get(defaultURL+location_id+'/reviews',{ headers: { Authorization: localStorage.getItem('token') } })
+        ])
+            .then(axios.spread(function (stats, reviews) {
+                var statsJson = stats.data;
+                var reviewsJson = reviews.data;
+                that.setState({ statsJson: statsJson});
+                that.setState({reviewsJson:reviewsJson})
+            }))
+            .catch(error => console.log(error));
     },
     render: function () {
-        var {locationArray,statsJson, selectedLocation} = this.state;
+        var {locationArray,statsJson, selectedLocation, statsJson, reviewsJson} = this.state;
         if( locationArray.locations === undefined ) {
             return <div className="row">Loading...</div>
         }
@@ -68,7 +73,7 @@ var Dashboard = React.createClass({
                     <div className="row">
                         <div className="col-sm-12 bg_blu">
 
-                            {React.cloneElement(this.props.children,{statsJson: this.state.statsJson, selectedLocation: selectedLocation})}
+                            {React.cloneElement(this.props.children,{statsJson: statsJson, reviewsJson:reviewsJson, selectedLocation: selectedLocation})}
 
                         </div>
                     </div>
