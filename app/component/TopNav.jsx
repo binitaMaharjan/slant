@@ -1,7 +1,8 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
 import LocationDropDown from 'LocationDropDown';
-
+var Cookies = require('universal-cookie');
+const cookie = new Cookies();
 var {Route, Router, IndexRoute, hashHistory,browserHistory} = require('react-router');
 
 
@@ -9,6 +10,9 @@ var TopNav = React.createClass({
     handleLogout: function (e) {
         e.preventDefault();
         localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        cookie.remove('access_token', { path: '/' });
+        cookie.remove('user', { path: '/' });
         browserHistory.push("/login");
         return;
     },
