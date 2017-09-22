@@ -25,10 +25,8 @@ var LocationDropDown = React.createClass({
         }
         return(
             <div className="dropdown loc_dd">
-                <p>rest{selectedLocation}</p>
                 <select id="location" name="location" className="col-sm-4" onChange={this.onLocationChange}>
                     <optgroup label="Select Location">
-                        <option value="test">test</option>
                         {renderOptions()}
                     </optgroup>
 
