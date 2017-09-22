@@ -1,41 +1,42 @@
 var React = require('react');
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import StarRating from 'react-star-rating';
+
 var moment = require('moment');
-moment().format();
 
 var Review = React.createClass({
     render: function () {
-
         var {statsJson, selectedLocation, reviewsJson} = this.props;
-        if (jQuery.isEmptyObject(reviewsJson) || typeof(reviewsJson) === "undefined") {
-            return <div>Loading...</div>
-        }
         var reviewData = reviewsJson;
         var reviewInfo = () => {
-
+            if (jQuery.isEmptyObject(reviewsJson) || typeof(reviewsJson) === "undefined") {
+                return <div>Loading...</div>
+            }
             if (reviewData.reviews.length > 0) {
                 return reviewData.reviews.map((result, index) => {
-                    //    if(index!==0) {
-                    return (
+                    var fulldate = new Date(result.date);
+                    var converted_date = moment(fulldate).format('YYYY-MM-DD');
+                    var today = moment().format("YYYY-MM-DD"); //2014-07-10
+                    var dateToday = moment(today);
+                    var total = null;
+                    if (dateToday.diff(converted_date, 'days') <= 30) {
+                        total = dateToday.diff(converted_date, 'days') + "  days";
+                    }
+                    else if (dateToday.diff(converted_date, 'months') >= 1 && dateToday.diff(converted_date, 'months') < 12) {
+                        total = dateToday.diff(converted_date, 'months') + "  months";
+                    }
+                    else {
+                        total = dateToday.diff(converted_date, 'year') + "  year";
+                    }
 
+                    return (
                         <div className="col-sm-6 review_box">
-                            {/*<Rater interactive={false} rating={3.6}/>*/}
-                            <StarRating  totalStars={5} rating={result.rating}  disabled="disabled"/>
-                            {/*<Rater total={5} rating={result.rating}  interactive={false}></Rater>*/}
+                            <StarRating totalStars={5} rating={result.rating} disabled="disabled"/>
                             <div className="row">
                                 <div className="col-sm-12">
                                     <img src="images/Oval.png"/>&emsp;<span
                                     className="onl_review_title">{result.author}</span> &emsp;
-
-
-                                    {/*<img src="images/GoldReview.png"/><img*/}
-                                    {/*src="images/GoldReview.png"/><img*/}
-                                    {/*src="images/GoldReview.png"/><img*/}
-                                    {/*src="images/GoldReview.png"/><img*/}
-                                    {/*src="images/GoldReview.png"/>*/}
-
-                                    <span className="days_ago"> 5 days ago</span>
+                                    <span className="days_ago"> {total} ago</span>
 
                                 </div>
 
@@ -56,7 +57,7 @@ var Review = React.createClass({
                         </div>
 
                     )
-                    // }
+
                 })
             }
             return <div>Loading...</div>
