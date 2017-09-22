@@ -1,25 +1,6 @@
 var axios = require('axios');
 const LOGIN_URL = 'https://api.slantreviews.com/v2/auth/login';
 
-/*module.exports ={a
-    getLoggedIn:function (email, password) {
-        var encodedLocation = encodeURIComponent(location);
-        var requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
-
-        return axios.get(requestUrl).then(function (res) {
-            if(res.data.cod && res.data.message){
-                throw new Error(res.data.message);
-            }else{
-                return res.data.main.temp;
-            }
-
-        },function (res) {
-            throw new Error(res.data.message);
-        });
-    }
-}*/
-
-
 module.exports = {
     getLoggedIn: function (email, password) {
         return axios.post(LOGIN_URL, {
