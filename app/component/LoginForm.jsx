@@ -93,9 +93,9 @@ var LoginForm = React.createClass({
                                 </div>
                             </div>
                         </div>
-                        <div className="col-sm-4">
+                    </div>
+                    <div className="col-sm-4">
 
-                        </div>
                     </div>
                 </div>
             </div>

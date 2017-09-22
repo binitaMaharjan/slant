@@ -34,6 +34,13 @@ html,body{
     text-align: center;
 
 }
+.reviews_customer{
+    font-family: Poppins-SemiBold, Georgia, serif;
+    font-size: 17px;
+    color: #97A2A4;
+    letter-spacing: -0.3px;
+    text-align: center;
+}
 
 input:focus,
 button:focus {

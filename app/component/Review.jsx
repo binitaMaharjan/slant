@@ -8,12 +8,13 @@ var Review = React.createClass({
     render: function () {
 
         var {statsJson, selectedLocation, reviewsJson} = this.props;
-        if (jQuery.isEmptyObject(reviewsJson) || typeof(reviewsJson) === "undefined") {
-            return <div>Loading...</div>
-        }
+
         var reviewData = reviewsJson;
         var reviewInfo = () => {
 
+            if (jQuery.isEmptyObject(reviewsJson) || typeof(reviewsJson) === "undefined") {
+                return <div>Loading...</div>
+            }
             if (reviewData.reviews.length > 0) {
                 return reviewData.reviews.map((result, index) => {
                     //    if(index!==0) {
@@ -28,6 +29,7 @@ var Review = React.createClass({
                                     <img src="images/Oval.png"/>&emsp;<span
                                     className="onl_review_title">{result.author}</span> &emsp;
 
+                                    <StarRating  totalStars={5} rating={result.rating}  disabled="disabled"/>
 
                                     {/*<img src="images/GoldReview.png"/><img*/}
                                     {/*src="images/GoldReview.png"/><img*/}

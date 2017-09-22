@@ -38,15 +38,6 @@ var NavSideBar = React.createClass({
                     <button onClick={this.toggleModal} className="btn btn_primary send_invite">
                         <img src="images/airplane.png"/>&#8195;  Send Request
                     </button>
-                    <Modal
-                        isOpen={this.state.isActive}
-                        style={customStyles}
-                        onRequestClose={this.toggleModal}
-                        contentLabel="Example Modal">Hello From Modal
-                        <button onClick={this.toggleModal} className="btn btn_primary send_invite">
-                            <img src="images/airplane.png"/>&#8195;  Send Request
-                        </button>
-                    </Modal>
 
                     <br/>
                     <br/><br/>
@@ -60,6 +51,51 @@ var NavSideBar = React.createClass({
                         <li><Link to={"/setting"}><img src="images/Settings.png"/>&#8195; Settings</Link></li>
                     </ul>
                 </div>
+                <Modal
+                    isOpen={this.state.isActive}
+                    onRequestClose={this.toggleModal}
+                    contentLabel="Example Modal"
+                    className="box">
+
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-4">
+
+                            </div>
+                            <div className="col-sm-4 box">
+                                <div className="row">
+                                    <div className="col-sm-2 col-md-1">
+                                    </div>
+                                    <div className="col-sm-8 col-md-10 box_inside">
+                                        <form className="reviews_customer">
+                                            Send a review request to
+                                            <br/>
+                                            your happy customers.
+                                            <br/>
+                                            <br/>
+                                            <input type="text" placeholder="First Name" className="log_user"
+                                                   autoFocus required/>
+
+                                            <input type="tel" placeholder="Phone Number" className="log_pass"
+                                             required/>
+
+                                            <button onClick={this.toggleModal} className="btn btn_primary btn_signin">
+                                                <img src="images/airplane.png"/>&#8195;  Send Request
+                                            </button>
+                                        </form>
+                                        <div className="col-sm-2 col-md-1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-sm-4">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </Modal>
+
             </div>
 
         );

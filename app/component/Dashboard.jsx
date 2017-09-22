@@ -73,7 +73,7 @@ var Dashboard = React.createClass({
                     <div className="row">
                         <div className="col-sm-12 bg_blu">
 
-                            <Review/>
+                            {React.cloneElement(this.props.children,{statsJson: statsJson, reviewsJson:reviewsJson, selectedLocation: selectedLocation})}
 
                         </div>
                     </div>
