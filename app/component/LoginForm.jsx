@@ -22,7 +22,7 @@ var LoginForm = React.createClass({
         //Email
         if (!fields["email"]) {
             formIsValid = false;
-            errors["email"] = "Email cannot be empty";
+            errors["email"] = "Username cannot be empty";
         }
 
         if (typeof fields["email"] !== "undefined") {
@@ -31,7 +31,7 @@ var LoginForm = React.createClass({
 
             if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') == -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
                 formIsValid = false;
-                errors["email"] = "Email is not valid";
+                errors["email"] = "Username is not valid";
             }
         }
         //password
@@ -43,7 +43,7 @@ var LoginForm = React.createClass({
         if (typeof fields["password"] !== "undefined") {
             if (fields["password"].length < 8) {
                 formIsValid = false;
-                errors["password"] = "Cannot be less than 8 character";
+                errors["password"] = "Password Cannot be less than 8 character";
             }
 
         }
@@ -80,11 +80,11 @@ var LoginForm = React.createClass({
                                     <input type="text" placeholder="Username" id="log_user" className="log_user"
                                            onChange={this.handleChange.bind(this, "email")}
                                            value={this.state.fields["email"]} autoFocus required/>
-                                    <span style={{color: "red"}}>{this.state.errors["email"]}</span>
+                                    <span style={{color: "red",fontSize :"17px"}}>{this.state.errors["email"]}</span>
                                     <input type="password" placeholder="Password" id="log_pass" className="log_pass"
                                            onChange={this.handleChange.bind(this, "password")}
                                            value={this.state.fields["password"]} required/>
-                                    <span style={{color: "red"}}>{this.state.errors["password"]}</span>
+                                    <span style={{color: "red",fontSize :"17px"}}>{this.state.errors["password"]}</span>
                                     <button className="btn btn-primary btn_signin">
                                         <img src="images/airplane.png"/>&#8195; Sign In
                                     </button>
