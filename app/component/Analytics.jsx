@@ -4,14 +4,11 @@ var {Link, IndexLink} = require('react-router');
 
 var Analytics = React.createClass({
   render:function () {
-      var {statsJson} = this.props;
+      var {statsJson, selectedLocation} = this.props;
       var total_reviews = 0;
       var reviews_by_site = [];
       var average_rating = 0;
       if(statsJson !== ''){
-          console.log(statsJson);
-
-
           total_reviews = statsJson.reviews.total_count;
           reviews_by_site = statsJson.reviews.by_site;
           reviews_by_site.sort(function (obj1, obj2) {

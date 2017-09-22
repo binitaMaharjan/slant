@@ -31,6 +31,7 @@ module.exports={
             Customer: 'app/component/Customer.jsx',
             LocationDropDown: 'app/component/LocationDropDown.jsx',
             loginApi:'app/api/loginApi.jsx',
+            reviewApi:'app/api/reviewApi.jsx',
             locationDropDownApi:'app/api/locationDropDownApi.jsx',
             getCurrentUser:'app/api/getCurrentUser.jsx',
             LocationStats:'app/api/LocationStats.jsx',

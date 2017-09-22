@@ -4,6 +4,10 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 var Review = React.createClass({
     render:function(){
+        var {statsJson, selectedLocation, reviewsJson} = this.props;
+        console.log("---------------------------");
+        console.log(reviewsJson);
+        console.log(selectedLocation);
         return (
 
             <div>
@@ -18,8 +22,9 @@ var Review = React.createClass({
                         <div className="row">
                             <div className="col-sm-12">
                                 <Tabs>
-                                    <TabList>
-                                        <Tab>Online Reviews</Tab>
+                                    <TabList className="nav nav-tabs">
+                                        <Tab className="active">Online Reviews</Tab>
+
                                         <Tab>Private Feedback</Tab>
                                     </TabList>
 
