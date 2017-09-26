@@ -2,13 +2,13 @@ var React = require('react');
 var {Link, IndexLink} = require('react-router');
 var Modal = require('react-modal');
 const customStyles = {
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)'
     }
 };
 
@@ -27,6 +27,11 @@ var NavSideBar = React.createClass({
         })
     },
     render: function () {
+        var reviewData = this.props.reviewsJson;
+        var total = 0;
+        if (!jQuery.isEmptyObject(reviewData) || !typeof(reviewsJson) === "reviewData") {
+            total = reviewData.reviews.length;
+        }
         return (
             <div className="row">
                 <div className="col-sm-12 side_nav">
@@ -46,7 +51,7 @@ var NavSideBar = React.createClass({
                         <li><Link to="/analytics" className="active"><img src="images/Analytics.png"/>&#8195; Analytics</Link>
                         </li>
                         <li><Link to="/review"><img src="images/Reviews.png"/>&#8195; Reviews <span
-                            className="badge">12</span></Link></li>
+                            className="badge">{total}</span></Link></li>
                         <li><Link to={"/customer"}><img src="images/Customers.png"/>&#8195; Customers</Link></li>
                         <li><Link to={"/setting"}><img src="images/Settings.png"/>&#8195; Settings</Link></li>
                     </ul>
@@ -77,7 +82,7 @@ var NavSideBar = React.createClass({
                                                    autoFocus required/>
 
                                             <input type="tel" placeholder="Phone Number" className="log_pass"
-                                             required/>
+                                                   required/>
 
                                             <button onClick={this.toggleModal} className="btn btn_primary btn_signin">
                                                 <img src="images/airplane.png"/>&#8195;  Send Request
