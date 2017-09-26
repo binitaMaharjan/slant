@@ -23,7 +23,7 @@ var TopNav = React.createClass({
         var {locationArray} = this.props;
         return(
             <div className="headbar">
-                <LocationDropDown locationArray={locationArray} onLocationChangeStat={this.handleLocationChange}/>
+
                 <div className="btn-group navbar-right slant-logout">
 
                     <img src="images/CustomerProfile.png" className="dropdown-toggle Cprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
@@ -33,6 +33,7 @@ var TopNav = React.createClass({
                         <li><Link to="#" onClick={this.handleLogout}>Logout</Link></li>
                     </ul>
                 </div>
+                <LocationDropDown locationArray={locationArray} onLocationChangeStat={this.handleLocationChange}/>
             </div>
 
         );

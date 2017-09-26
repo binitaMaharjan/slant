@@ -51,7 +51,7 @@ var NavSideBar = React.createClass({
                         <li><Link to="/analytics" className="active"><img src="images/Analytics.png"/>&#8195; Analytics</Link>
                         </li>
                         <li><Link to="/review"><img src="images/Reviews.png"/>&#8195; Reviews <span
-                            className="badge">{total}</span></Link></li>
+                            className="badge custom_badge">{total}</span></Link></li>
                         <li><Link to={"/customer"}><img src="images/Customers.png"/>&#8195; Customers</Link></li>
                         <li><Link to={"/setting"}><img src="images/Settings.png"/>&#8195; Settings</Link></li>
                     </ul>

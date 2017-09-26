@@ -122,7 +122,10 @@ var Analytics = React.createClass({
                           <div className="col-sm-12">
                               <span>Sites with review</span>
                               <br/>
-                              {renderSites()}
+                              <div className="custom_site_review">
+                                  {renderSites()}
+                              </div>
+
                           </div>
                       </div>
                   </div>

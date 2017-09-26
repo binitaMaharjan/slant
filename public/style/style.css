@@ -179,7 +179,7 @@ button:focus {
 
 .headbar{
     height: 7.68vh;
-    margin:0 auto;
+    margin:10px auto;
     background-color: #FFFFFF;
 }
 
@@ -262,13 +262,13 @@ button:focus {
     color: #4A4A4A;
 }
 
-.Cprofile{
+/*.Cprofile{
     width:40px;
     height: 50px;
     border-radius: 50%;
     float: right;
     margin: 0 21px;
-}
+}*/
 
 .review_head{
     font-family: Poppins-Medium, Georgia, serif;
@@ -670,7 +670,7 @@ svg.rsr__star{
 }
 .loading_icon{
     color:yellow;
-    background-image: url("../images/Loading_icon.gif");
+    background-image: url("../images/load_icon.gif");
 }
 
 .list_style ul{
@@ -689,4 +689,22 @@ svg.rsr__star{
     margin: 0% 47%;
     position:absolute;
     top: 47%
+}
+.custom_site_review >span {
+    margin: 15px 10px;
+    float: left;
+}
+.custom_site_review span a {
+  text-align: center;
+}
+@media(min-width: 768px) {
+    .navbar-right {
+        margin-right: 5px !important;
+    }
+}
+.custom_badge{
+    padding: 4px 12px !important;
+    display: unset !important;
+    background-color: #B2B2BE;
+    border-radius: 20px ;
 }

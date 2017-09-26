@@ -18,7 +18,7 @@ var Review = React.createClass({
         var reviewData = reviewsJson;
         var reviewInfo = () => {
             if (jQuery.isEmptyObject(reviewsJson) || typeof(reviewsJson) === "undefined") {
-                return <div className="load_style"><img style={LoadStyle} src="images/load_icon.gif"/></div>
+                return <div className="load_style"><img className="load_style"  src="images/load_icon.gif"/></div>
             }
             if (reviewData.reviews.length > 0) {
                 return reviewData.reviews.map((result, index) => {
@@ -70,7 +70,7 @@ var Review = React.createClass({
 
                 })
             }
-            return <div style={rowStyle}><img className="load_style" src="images/load_icon.gif"/></div>
+            return <div style={rowStyle}><img className="load_style"  src="images/load_icon.gif"/></div>
         };
         return (
 
